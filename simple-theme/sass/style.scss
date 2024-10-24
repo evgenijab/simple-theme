@@ -34,8 +34,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 --------------------------------------------------------------*/
 
+/* Variables
+--------------------------------------------- */
+@import "variables/colors";
+
 /* Base
 --------------------------------------------- */
-h1 {
-	color: red;
-}
+@import "base/fonts";
+@import "base/typography";
+@import "base/buttons";

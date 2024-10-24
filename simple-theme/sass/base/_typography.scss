@@ -1,0 +1,49 @@
+$font-main: 'Satoshi', -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif; 
+
+body{
+	font-family: $font-main;
+	color: $text-color;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 21.6px;
+}
+p {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 21.6px;
+
+	&.dark {
+		font-weight: 500;
+	}
+}
+
+h1 {
+	font-size: 90px;
+	font-weight: 900;
+	line-height: 81px;
+}
+
+h2,
+.as-h2 {
+	font-size: 60px;
+	font-weight: 900;
+	line-height: 81px;
+}
+
+h3 {
+	font-size: 48px;
+	font-weight: 900;
+	line-height: 64.8px;
+}
+
+h4 {
+	font-size: 32px;
+	font-weight: 900;
+	line-height: 43.2px;
+}
+
+.text-big {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 27px;
+}
