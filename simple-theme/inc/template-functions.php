@@ -4,7 +4,33 @@
  *
  * @package simple-theme
  */
+/**
+ * BLOCKS
+ */
+add_action( 'acf/init', 'snk_child_acf_init_block_types' );
+/**
+ * Function snk_child_acf_init_block_types
+ */
+function snk_child_acf_init_block_types() {
 
+	if ( function_exists( 'acf_register_block_type' ) ) {
+
+		// registers block headlines.
+		acf_register_block_type(
+			array(
+				'name'              => 'headlines',
+				'title'             => __( 'Headlines' ),
+				'description'       => __( 'A custom headline block.' ),
+				'category'          => 'simple-blocks',
+				'icon'              => 'align-wide',
+				'keywords'          => array( 'headline block', 'headline', 'text', 'block' ),
+				'mode'              => 'preview',
+				'render_template'   => 'inc/blocks/headlines/headlines.php',
+				//'enqueue_style'     => snk_block_file( 'inc/blocks/headlines/headlines.css', true ),
+				'supports'          => array( 'anchor' => true ),
+			)
+		);
+	}}
 /**
  * Adds custom classes to the array of body classes.
  *

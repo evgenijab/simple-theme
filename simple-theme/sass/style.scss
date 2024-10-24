@@ -43,3 +43,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "base/fonts";
 @import "base/typography";
 @import "base/buttons";
+
+/* Mixins
+--------------------------------------------- */
+@import "mixins/mixins";
+@import "mixins/breakpoints";
