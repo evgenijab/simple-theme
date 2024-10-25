@@ -30,6 +30,21 @@ function snk_child_acf_init_block_types() {
 				'supports'          => array( 'anchor' => true ),
 			)
 		);
+		// registers text-media block.
+		acf_register_block_type(
+			array(
+				'name'              => 'text-media',
+				'title'             => __( 'Text/Media' ),
+				'description'       => __( 'A custom text-media block.' ),
+				'category'          => 'simple-blocks',
+				'icon'              => 'playlist-video',
+				'keywords'          => array( 'text-media', 'text', 'media' ),
+				'mode'              => 'preview',
+				'render_template'   => 'inc/blocks/text-media/text-media.php',
+				//'enqueue_style'     => snk_block_file( 'inc/blocks/text-media/text-media.css', true ),
+				'supports'          => array( 'anchor' => true ),
+			)
+		);
 	}}
 /**
  * Adds custom classes to the array of body classes.

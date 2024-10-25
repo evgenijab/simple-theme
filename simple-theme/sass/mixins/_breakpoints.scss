@@ -22,6 +22,14 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 );
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+  );
 @function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
 	$n: index($breakpoint-names, $name);
 	@if not $n {

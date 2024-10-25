@@ -1,0 +1,19 @@
+.btn-primary {
+	background-color: $primary-color;
+	padding: 20px 32px;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+	text-decoration: none;
+
+	@include media-breakpoint-down(md) {
+		font-size: 16px;
+		padding: 10px 24px;
+	}
+
+	&:hover {
+		opacity: 0.9;
+	}
+}

@@ -33,6 +33,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
+/* Mixins
+--------------------------------------------- */
+@import "mixins/mixins";
+@import "mixins/breakpoints";
 
 /* Variables
 --------------------------------------------- */
@@ -43,8 +47,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "base/fonts";
 @import "base/typography";
 @import "base/buttons";
+@import "base/grid";
 
-/* Mixins
+/* Components
 --------------------------------------------- */
-@import "mixins/mixins";
-@import "mixins/breakpoints";
+@import "components/text-media";
