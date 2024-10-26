@@ -250,6 +250,20 @@ h4 {
   opacity: 0.9;
 }
 
+.btn-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #424245;
+  text-decoration: none;
+}
+.btn-link svg {
+  transition: all 0.3s ease-in;
+}
+.btn-link:hover svg {
+  transform: rotate(-45deg);
+}
+
 .container {
   max-width: 1280px;
 }
@@ -281,4 +295,190 @@ h4 {
   .section-text-media .content-inner_date {
     max-width: 100%;
   }
+}
+
+.section-speakers h4 {
+  margin-bottom: 22px;
+}
+.section-speakers .speakers-inner_heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #BCD7FF;
+}
+.section-speakers .speakers-inner_content {
+  padding-top: 40px;
+}
+.section-speakers .speaker-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.section-speakers .speaker-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.section-speakers .speaker-card img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}
+.section-speakers .speaker-card_content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.section-speakers .speaker-card_details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-top: 0.5px solid;
+  border-bottom: 1px solid;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Ensures text doesn't wrap */
+}
+.section-speakers .speaker-card_details p {
+  margin: 0;
+  text-align: center;
+  word-break: break-word; /* Prevents overflow for long words */
+}
+.section-speakers .speaker-card * {
+  color: #fff;
+}
+
+.site-header,
+.simple-header {
+  display: block;
+}
+
+.simple-header-wrapper {
+  background-color: #fff;
+}
+.simple-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.simple-header-title:last-child {
+  margin-bottom: auto;
+}
+@media (max-width: 767.98px) {
+  .simple-header {
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+  .simple-header-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    max-height: calc(100vh - 68px);
+    transform: translate3d(0, 100%, 0);
+    background-color: #fff;
+    overflow: auto;
+  }
+}
+
+.simple-navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+@media (max-width: 767.98px) {
+  .simple-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.simple-navigation li {
+  position: relative;
+}
+.simple-navigation a {
+  display: block;
+  text-decoration: none;
+}
+.simple-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+@media (max-width: 767.98px) {
+  .simple-navigation ul {
+    display: none;
+  }
+}
+.simple-navigation ul li:hover > ul,
+.simple-navigation ul li.focus > ul {
+  left: auto;
+}
+.simple-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+}
+.simple-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+.simple-navigation ul ul li:hover > ul, .simple-navigation ul ul li.focus > ul {
+  display: block;
+  left: 100%;
+}
+.simple-navigation ul ul a {
+  width: 200px;
+}
+
+/* Small menu. */
+.menu-toggle,
+.simple-navigation.toggled ul {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .simple-navigation-menu > ul {
+    display: flex;
+    margin: -1rem;
+  }
+  .simple-navigation-menu > ul > li {
+    padding: 1rem;
+  }
+}
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+}
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+  display: flex;
+}
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  flex: 1 0 50%;
+}
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  text-align: end;
+  flex: 1 0 50%;
 }

@@ -5,13 +5,30 @@
  * @package simple-theme
  */
 /**
+ * Sets up a custom block category.
+ *
+ * @param array $categories returns block categories.
+ */
+function block_categories( $categories ) {
+	return array_merge(
+		array(
+			array(
+				'slug'  => 'simple-blocks',
+				'title' => __( 'Simple Blocks', 'simple-blocks' ),
+			),
+		),
+		$categories
+	);
+}
+add_action( 'block_categories_all', 'block_categories' );
+/**
  * BLOCKS
  */
-add_action( 'acf/init', 'snk_child_acf_init_block_types' );
+add_action( 'acf/init', 'acf_init_block_types' );
 /**
- * Function snk_child_acf_init_block_types
+ * Function acf_init_block_types
  */
-function snk_child_acf_init_block_types() {
+function acf_init_block_types() {
 
 	if ( function_exists( 'acf_register_block_type' ) ) {
 
@@ -26,7 +43,6 @@ function snk_child_acf_init_block_types() {
 				'keywords'          => array( 'headline block', 'headline', 'text', 'block' ),
 				'mode'              => 'preview',
 				'render_template'   => 'inc/blocks/headlines/headlines.php',
-				//'enqueue_style'     => snk_block_file( 'inc/blocks/headlines/headlines.css', true ),
 				'supports'          => array( 'anchor' => true ),
 			)
 		);
@@ -41,7 +57,20 @@ function snk_child_acf_init_block_types() {
 				'keywords'          => array( 'text-media', 'text', 'media' ),
 				'mode'              => 'preview',
 				'render_template'   => 'inc/blocks/text-media/text-media.php',
-				//'enqueue_style'     => snk_block_file( 'inc/blocks/text-media/text-media.css', true ),
+				'supports'          => array( 'anchor' => true ),
+			)
+		);
+		// registers speakers block.
+		acf_register_block_type(
+			array(
+				'name'              => 'speakers',
+				'title'             => __( 'Speakers' ),
+				'description'       => __( 'A custom Speakers block.' ),
+				'category'          => 'simple-blocks',
+				'icon'              => 'playlist-video',
+				'keywords'          => array( 'text-media', 'text', 'media', 'card' ),
+				'mode'              => 'preview',
+				'render_template'   => 'inc/blocks/speakers/speakers.php',
 				'supports'          => array( 'anchor' => true ),
 			)
 		);

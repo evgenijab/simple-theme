@@ -17,3 +17,20 @@
 		opacity: 0.9;
 	}
 }
+
+.btn-link {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	color: $text-color-light;
+	text-decoration: none;
+
+	svg {
+		transition: all 0.3s ease-in;
+	}
+	&:hover {
+		svg {
+			transform: rotate(-45deg);
+		}
+	}
+}

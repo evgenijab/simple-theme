@@ -45,6 +45,6 @@ if ( $headline || $description ) { ?>
 
 	<?php
 } else if ( $is_preview ) {
-	echo '<section class="snk-section"><div class="container"><div class="snk-empty">' . __( 'Empty block. Please fill out some fields in the right sidebar.', 'snk-child' ) . '</div></div></section>';
+	echo '<section class="section"><div class="container"><div class="empty">' . __( 'Empty block. Please fill out some fields in the right sidebar.', 'simple-theme' ) . '</div></div></section>';
 }
 ?>
