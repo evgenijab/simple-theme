@@ -25,18 +25,7 @@
 /* Components
 --------------------------------------------- */
 @import "components/text-media";
-@import "components/speakers-cards";
+@import "components/cards";
 @import "components/header/header";
 @import "components/header/navigation";
 @import "components/footer";
-
-body {
-	margin: 0;
-	word-wrap: break-word;
-overflow-wrap: break-word;
-
-}
-
-* {
-    box-sizing: border-box;
-}

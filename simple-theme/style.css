@@ -339,21 +339,21 @@ h5 {
 .section-cards .cards-inner_content {
   padding-top: 40px;
 }
-.section-cards .card {
+.section-cards .card-content-wrap {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.section-cards .card img {
+.section-cards .card-content-wrap:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}
+.section-cards .card-content-wrap img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-.section-cards .card img:hover {
-  transform: scale(1.1);
-  transition: all 0.3s ease-out;
-}
-.section-cards .card_content {
+.section-cards .card-content-wrap_content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -361,7 +361,7 @@ h5 {
   padding: 24px;
   box-sizing: border-box;
 }
-.section-cards .card_details {
+.section-cards .card-content-wrap_details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -373,12 +373,12 @@ h5 {
   text-overflow: ellipsis;
   white-space: nowrap; /* Ensures text doesn't wrap */
 }
-.section-cards .card_details p {
+.section-cards .card-content-wrap_details p {
   margin: 0;
   text-align: center;
   word-break: break-word; /* Prevents overflow for long words */
 }
-.section-cards .card * {
+.section-cards .card-content-wrap * {
   color: #fff;
 }
 

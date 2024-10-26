@@ -107,10 +107,24 @@ function acf_init_block_types() {
 				'title'             => __( 'Speakers' ),
 				'description'       => __( 'A custom Speakers block.' ),
 				'category'          => 'simple-blocks',
-				'icon'              => 'playlist-video',
+				'icon'              => 'megaphone',
 				'keywords'          => array( 'text-media', 'text', 'media', 'card' ),
 				'mode'              => 'preview',
 				'render_template'   => 'inc/blocks/speakers/speakers.php',
+				'supports'          => array( 'anchor' => true ),
+			)
+		);
+		// registers events block.
+		acf_register_block_type(
+			array(
+				'name'              => 'events',
+				'title'             => __( 'Events teaser' ),
+				'description'       => __( 'A custom Events teaser block.' ),
+				'category'          => 'simple-blocks',
+				'icon'              => 'schedule',
+				'keywords'          => array( 'text-media', 'text', 'media', 'card' ),
+				'mode'              => 'preview',
+				'render_template'   => 'inc/blocks/events/events.php',
 				'supports'          => array( 'anchor' => true ),
 			)
 		);
