@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# 
+
+ --------------------------------------------------------------*/
+
+
+/* Mixins
+--------------------------------------------- */
+@import "mixins/mixins";
+@import "mixins/breakpoints";
+
+/* Variables
+--------------------------------------------- */
+@import "variables/colors";
+
+/* Base
+--------------------------------------------- */
+@import "base/fonts";
+@import "base/typography";
+@import "base/buttons";
+@import "base/grid";
+
+/* Components
+--------------------------------------------- */
+@import "components/text-media";
+@import "components/speakers-cards";
+@import "components/header/header";
+@import "components/header/navigation";
+@import "components/footer";
+
+body {
+	margin: 0;
+	word-wrap: break-word;
+overflow-wrap: break-word;
+
+}
+
+* {
+    box-sizing: border-box;
+}

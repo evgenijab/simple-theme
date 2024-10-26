@@ -27,10 +27,10 @@ if ( $button ) :
 	$button_target = $button['target'] ? $button['target'] : '_self';
 endif;
 if ( $section_title ) { ?>
-	<section class="section section-speakers">
+	<section class="section section-cards section-speakers">
 		<div class="container">
 			
-			<div class="speakers-inner_heading">
+			<div class="cards-inner_heading">
 				
 				<?php if ($section_title) : ?>
 			<h2>
@@ -44,7 +44,7 @@ if ( $section_title ) { ?>
 				<?php endif; ?>
 			
 			</div>
-			<div class="row speakers-inner_content">
+			<div class="row cards-inner_content">
 				<div class="col-md-3">
 			<?php if ($section_description) : ?>
 				<p> 
@@ -64,16 +64,16 @@ if ( $section_title ) { ?>
 						?>
 						
 						<div class="col-md-6">
-							<div class="speaker-card">
+							<div class="card">
 							<?php if ( $image ) : ?>
 							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
 						<?php endif; ?>
 								
-								<div class="speaker-card_content">
+								<div class="card_content">
 								<?php if ($name) : ?>
 									<h4><?php echo $name; ?> </h4>
 								<?php endif; ?>
-								<div class="speaker-card_details">
+								<div class="card_details">
 								
 								<?php if ($position) : ?>
 									<p><?php echo $position; ?> </p>

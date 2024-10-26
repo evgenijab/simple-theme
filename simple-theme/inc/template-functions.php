@@ -145,3 +145,16 @@ function simple_theme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'simple_theme_pingback_header' );
+
+add_action( 'admin_head', 'backend_editor_interface_changes' );
+/**
+ * CSS changes for gutenberg backend which can't be done with editor-styles.
+ */
+function backend_editor_interface_changes() {
+	$admin_styling = '';
+	$admin_style = get_theme_file_path( '/admin-style.css' );
+	if ( file_exists( $admin_style ) ) {
+		$admin_styling .= file_get_contents( $admin_style );
+	}
+	echo '<style>' . $admin_styling . '</style>';
+}

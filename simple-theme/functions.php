@@ -151,6 +151,15 @@ function simple_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'simple_theme_scripts' );
 
+add_action( 'admin_init', 'editor_styles' );
+/**
+ * Add support for editor styles.
+ */
+function editor_styles() {
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'editor-style.css' );
+	wp_enqueue_style('bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css' );
+}
 /**
  * Implement the Custom Header feature.
  */
