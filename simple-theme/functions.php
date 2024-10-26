@@ -212,3 +212,31 @@ function my_acf_json_load_point( $paths ) {
 	// return.
 	return $paths;
 }
+
+/**
+ * Adding inline SVG icons with PHP function.
+ *
+ * @param   string $name The SVG file name.
+ * @param   string $type The icon type (f.e 'icons', 'picto', 'logo').
+ * @param   bool   $echo Echo SVG or return.
+ */
+function inline_svg( $name = '', $type = 'icon', $echo = true ) {
+	if ( strlen( $name ) > 0 ) {
+		$svgfolder = '/assets/svgs/';
+		$ext = '.svg';
+		if ( $type && 'icon' !== $type && strpos( $type, ' ' ) === false ) {
+			$svgfolder = $svgfolder . $type . 's/';
+		} else {
+			$svgfolder = $svgfolder . 'icons/';
+		}
+		$svg_filepath = get_stylesheet_directory() . $svgfolder . $name . $ext;
+		if ( file_exists( $svg_filepath ) ) {
+			$svg = file_get_contents( $svg_filepath );
+			if ( $echo ) {
+				echo $svg;
+			} else {
+				return $svg;
+			}
+		}
+	}
+}
