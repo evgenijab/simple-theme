@@ -59,4 +59,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 body {
 	margin: 0;
+	word-wrap: break-word;
+overflow-wrap: break-word;
+
+}
+
+* {
+    box-sizing: border-box;
 }

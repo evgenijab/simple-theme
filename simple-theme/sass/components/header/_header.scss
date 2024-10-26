@@ -14,8 +14,12 @@
 	&-wrapper {
 		background-color: #fff;
 		border-bottom: 1px solid #C8C8C8;
-		@include media-breakpoint-down(md) { 
-			padding-bottom: 20px;
+		// @include media-breakpoint-down(md) { 
+		// 	padding-bottom: 20px;
+		// }
+
+		.container {
+			overflow: visible;
 		}
 	}
 

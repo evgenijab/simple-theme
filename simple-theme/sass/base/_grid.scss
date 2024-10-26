@@ -1,5 +1,12 @@
 .container {
 	max-width: 1280px;
+	overflow-x: hidden;
+
+	@include media-breakpoint-down(md) {
+		padding: 0 24px;
+	}
 }
-$gap-x: 24px;
-$gap-x-small: 16px;
+
+.section {
+	padding: 64px 0;
+}

@@ -1,9 +1,11 @@
-.section-speakers {
+.section-cards {
 	h4 {
 		margin-bottom: 22px;
 	}
-	
-	.speakers-inner {
+	.row {
+		--bs-gutter-y: 1.5rem;
+		}
+	.cards-inner {
 		&_heading{
 		display: flex;
 		flex-direction: row;
@@ -16,7 +18,7 @@
 		}
 	}
 	
-	.speaker-card {
+	.card {
 		position: relative;
 		width: 100%;
 		overflow: hidden;

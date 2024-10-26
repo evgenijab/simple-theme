@@ -1,0 +1,32 @@
+@media (min-width: 782px) {
+
+	.interface-complementary-area {
+		width: 460px;
+	}
+
+	.interface-complementary-area .acf-field-message:first-of-type {
+		display: none;
+	}
+}
+
+.editor-styles-wrapper {
+	padding: 0;
+}
+
+.block-editor .edit-post-sidebar .acf-fields > .acf-field {
+	margin: 8px;
+}
+
+.acf-repeater .acf-row-handle {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.acf-editor-wrap[data-toolbar="minimal"] > .wp-editor-tools > .wp-media-buttons,
+.acf-editor-wrap[data-toolbar="simple"] > .wp-editor-tools > .wp-media-buttons {
+	display: none;
+}
+
+.components-placeholder__fieldset .components-spinner {
+	margin: auto;
+}
