@@ -1,0 +1,27 @@
+.simple-footer {
+	background-color: $primary-color;
+	padding: 40px 0 32px 0;
+	* {
+		color: #FAFAFA;
+	}
+
+	.footer-links {
+		display: flex;
+		flex-direction: column;
+		gap: 26px;
+
+		a {
+			text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+    		text-underline-offset: 3px;
+		}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 48px 0;
+
+	}
+}

@@ -59,8 +59,25 @@ h4 {
 	line-height: 43.2px;
 }
 
+h5 {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 31.25px;
+
+	@include media-breakpoint-down(md) {
+		font-size: 16;
+		line-height: 20.83px;
+		font-weight: 700;
+	}
+}
+
 .text-big {
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 27px;
+
+	@include media-breakpoint-down(md) {
+		font-size: 16;
+		line-height: 20.83px;
+	}
 }
