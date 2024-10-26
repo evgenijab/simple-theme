@@ -4,6 +4,38 @@
  *
  * @package simple-theme
  */
+
+ /*
+	THEME OPTIONS
+*/
+add_action( 'acf/init', 'acf_init_options_page' );
+/**
+ * Function acf_init_options_page
+ */
+function acf_init_options_page() {
+	if ( function_exists( 'acf_add_options_page' ) ) {
+
+		acf_add_options_page(
+			array(
+				'page_title'    => 'Theme General Settings',
+				'menu_title'    => 'Theme Settings',
+				'menu_slug'     => 'theme-general-settings',
+				'capability'    => 'edit_posts',
+				'icon_url'      => 'dashicons-admin-tools',
+				'redirect'      => true,
+			)
+		);
+
+		acf_add_options_sub_page(
+			array(
+				'page_title'    => 'Theme Header Settings',
+				'menu_title'    => 'Header',
+				'parent_slug'   => 'theme-general-settings',
+			)
+		);
+	}
+}
+
 /**
  * Sets up a custom block category.
  *

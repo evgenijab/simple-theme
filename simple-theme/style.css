@@ -358,21 +358,42 @@ h4 {
   display: block;
 }
 
+.simple-navigation-menu {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
 .simple-header-wrapper {
   background-color: #fff;
+  border-bottom: 1px solid #C8C8C8;
+}
+@media (max-width: 767.98px) {
+  .simple-header-wrapper {
+    padding-bottom: 20px;
+  }
 }
 .simple-header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 52px 0;
+}
+@media (max-width: 767.98px) {
+  .simple-header-inner {
+    padding: 24px 0;
+  }
 }
 .simple-header-title:last-child {
   margin-bottom: auto;
 }
+.simple-header-branding {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
 @media (max-width: 767.98px) {
   .simple-header {
-    height: 68px;
     position: sticky;
     top: 0;
     z-index: 99;
@@ -393,13 +414,40 @@ h4 {
 .simple-navigation {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
   width: 100%;
+}
+.simple-navigation .nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 42px;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .simple-navigation .nav-buttons {
+    display: none;
+  }
+}
+.simple-navigation .nav-buttons .btn-link {
+  color: #717172;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
+}
+.simple-navigation .nav-buttons .btn-primary {
+  padding: 12px 32px;
+}
+.simple-navigation-menu a {
+  color: #717172;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27px;
 }
 @media (max-width: 767.98px) {
   .simple-navigation {
     flex-direction: column;
     align-items: flex-start;
+    display: none;
   }
 }
 .simple-navigation li {
@@ -442,6 +490,24 @@ h4 {
 .simple-navigation ul ul a {
   width: 200px;
 }
+.simple-navigation.toggled {
+  display: flex;
+  position: absolute;
+  top: 121%;
+  background-color: #fff;
+}
+.simple-navigation.toggled .nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+.simple-navigation.toggled li {
+  padding-bottom: 16px;
+}
+.simple-navigation.toggled .menu {
+  padding-top: 16px;
+}
 
 /* Small menu. */
 .menu-toggle,
@@ -461,24 +527,6 @@ h4 {
     padding: 1rem;
   }
 }
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-  margin: 0 0 1.5em;
-}
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-  display: flex;
-}
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  flex: 1 0 50%;
-}
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  text-align: end;
-  flex: 1 0 50%;
+body {
+  margin: 0;
 }

@@ -4,15 +4,16 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+document.addEventListener('DOMContentLoaded', function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
-	const siteHeader = document.getElementById( 'masthead' );
+
 	// Return early if the navigation doesn't exist.
 	if ( ! siteNavigation ) {
 		return;
 	}
 
-	const button = siteHeader.getElementsByClassName( 'menu-toggle' )[ 0 ];
+	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+
 	// Return early if the button doesn't exist.
 	if ( 'undefined' === typeof button ) {
 		return;
@@ -31,14 +32,14 @@
 	}
 
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-	button.addEventListener( 'click', function( e ) {
+	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
-		if ( this.getAttribute( 'aria-expanded' ) === 'true' ) {
-			this.setAttribute( 'aria-expanded', 'false' );
+
+		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
+			button.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			this.setAttribute( 'aria-expanded', 'true' );
+			button.setAttribute( 'aria-expanded', 'true' );
 		}
-		e.stopPropagation();
 	} );
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
@@ -55,9 +56,7 @@
 	const links = menu.getElementsByTagName( 'a' );
 
 	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll(
-		'.menu-item-has-children > a, .page_item_has_children > a'
-	);
+	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( const link of links ) {
@@ -70,7 +69,10 @@
 		link.addEventListener( 'touchstart', toggleFocus, false );
 	}
 
-	function toggleFocus( event ) {
+	/**
+	 * Sets or removes .focus class on an element.
+	 */
+	function toggleFocus() {
 		if ( event.type === 'focus' || event.type === 'blur' ) {
 			let self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.
@@ -95,3 +97,32 @@
 		}
 	}
 }() );
+
+/* Jquery nav toggle */
+jQuery(document).ready(function($) {
+    const siteNavigation = $('#site-navigation');
+    const button = $('.menu-toggle');
+
+    // Return early if the button doesn't exist
+    if (!button.length || !siteNavigation.length) return;
+
+    // Toggle the .toggled class and the aria-expanded value each time the button is clicked
+    button.on('click', function(e) {
+        siteNavigation.toggleClass('toggled');
+        
+        // Set or toggle the aria-expanded attribute
+        const expanded = $(this).attr('aria-expanded') === 'true';
+        $(this).attr('aria-expanded', !expanded);
+
+        e.stopPropagation();
+    });
+
+    // Close the menu if a click occurs outside of it
+    $(document).on('click', function(event) {
+        if (!siteNavigation.is(event.target) && siteNavigation.has(event.target).length === 0) {
+            siteNavigation.removeClass('toggled');
+            button.attr('aria-expanded', 'false');
+        }
+    });
+});
+

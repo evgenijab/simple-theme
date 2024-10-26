@@ -1,19 +1,33 @@
 .site-header,
 .simple-header {
 	display: block;
+	
+}
+.simple-navigation-menu {
+	flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .simple-header {
 
 	&-wrapper {
 		background-color: #fff;
+		border-bottom: 1px solid #C8C8C8;
+		@include media-breakpoint-down(md) { 
+			padding-bottom: 20px;
+		}
 	}
 
 	&-inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1rem;
+		padding: 52px 0;
+
+		@include media-breakpoint-down(md) {
+			padding: 24px 0;
+		}
 	}
 
 	&-title {
@@ -23,9 +37,14 @@
 		}
 	}
 
+	&-branding {
+		display: flex;
+    justify-content: flex-start;
+    flex: 1;
+	}
 	@include media-breakpoint-down(md) {
 		
-		height: 68px;
+		//height: 68px;
 		position: sticky;
 		top: 0;
 		z-index: 99;
