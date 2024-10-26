@@ -27,7 +27,7 @@ if ( $button ) :
 	$button_target = $button['target'] ? $button['target'] : '_self';
 endif;
 if ( $section_title ) { ?>
-	<section class="section section-cards section-speakers">
+	<section class="section section-cards section-events">
 		<div class="container">
 			
 			<div class="cards-inner_heading">
@@ -45,25 +45,18 @@ if ( $section_title ) { ?>
 			
 			</div>
 			<div class="row cards-inner_content">
-				<div class="col-md-3">
-			<?php if ($section_description) : ?>
-				<p> 
-					<?php echo $section_description; ?>
-			</p> 
-				<?php endif; ?>
-			</div>
-			<?php if(have_rows('speakers')) : ?>
-				<div class="col-md-9">
-				<div class="row">
-					<?php while (have_rows('speakers')) : 
+				
+			<?php if(have_rows('events')) : ?>
+				
+					<?php while (have_rows('events')) : 
 						the_row();
 						$image = get_sub_field('image');
 						$name = get_sub_field('name');
-						$position = get_sub_field('position');
+						$link = get_sub_field('link');
 						$location = get_sub_field('location');
 						?>
 						
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="card-content-wrap">
 							<?php if ( $image ) : ?>
 							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
@@ -74,21 +67,22 @@ if ( $section_title ) { ?>
 									<h4><?php echo $name; ?> </h4>
 								<?php endif; ?>
 								<div class="card-content-wrap_details">
-								
-								<?php if ($position) : ?>
-									<p><?php echo $position; ?> </p>
-								<?php endif; ?>
 								<?php if ($location) : ?>
 									<p><?php echo $location; ?> </p>
 								<?php endif; ?>
+								<?php if ($link) : ?>
+									<a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>" class="btn-link">
+					<span><?php echo esc_html( $link['title'] ); ?></span></a>
+				
+								<?php endif; ?>
+								
 								</div>
 								</div>
 					</div>
 					</div>
 					
 					<?php endwhile; ?>
-					</div>
-			</div>
+					
 				<?php endif;?>
 			</div>
 		</div>
